@@ -60,7 +60,9 @@ class UnsuccessfulStatusError implements IApiClientError {
 
   const UnsuccessfulStatusError(this.response);
 
-  bool get isContentJson => response.headers["Content-Type"] == "application/json";
+  bool get isContentJson =>
+      response.headers["Content-Type"] == "application/json";
+
   @override
   String toString() {
     final url = response.request?.url;
@@ -78,7 +80,17 @@ class UnsuccessfulStatusError implements IApiClientError {
 class ClientClosedError implements IApiClientError {
   @override
   ApiClientErrorKind get kind => ApiClientErrorKind.ClientClosed;
+
   const ClientClosedError();
+}
+
+/// その他のエラー
+class OtherError implements IApiClientError {
+  @override
+  ApiClientErrorKind get kind => ApiClientErrorKind.Others;
+
+  @override
+  String toString() => "$runtimeType";
 }
 
 /// 想定外のエラー
@@ -88,14 +100,15 @@ class UnknownError implements IApiClientError {
   const UnknownError(this.e);
 
   @override
-  String toString() => "$runtimeType（type = ${e?.runtimeType ?? "null"}, message = ${e?.toString() ?? "null"}）";
+  String toString() =>
+      "$runtimeType（type = ${e?.runtimeType ?? "null"}, message = ${e?.toString() ?? "null"}）";
 
   @override
   ApiClientErrorKind get kind => ApiClientErrorKind.Unknown;
 }
 
 enum ApiClientErrorKind {
-  None,
+  Others,
   InvalidUri,
   InvalidRequest,
   Timeout,
