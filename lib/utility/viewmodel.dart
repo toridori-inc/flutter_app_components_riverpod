@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 typedef ViewModelStateWatcher<T> = T Function(
-    T currentState, T Function<T>(AlwaysAliveProviderBase<Object, T>) locator);
+    T currentState, T Function<T>(AlwaysAliveProviderBase<Object?, T>) locator);
 
 /// EntityデータとUIの仲介役となるViewModelを生成します
 ///
@@ -23,7 +23,7 @@ class ViewModel<T> extends StateNotifier<T> {
   }
 
   void _tryUpdateState(
-      T Function<T>(AlwaysAliveProviderBase<Object, T>) locator) {
+      T Function<T>(AlwaysAliveProviderBase<Object?, T>) locator) {
     if (stateWatcher == null) {
       return;
     }
