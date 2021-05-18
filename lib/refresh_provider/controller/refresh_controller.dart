@@ -48,7 +48,7 @@ abstract class RefreshController<V, E> extends StateNotifier<RefreshState<V, E>>
     super.dispose();
   }
 
-  Future requestLifetimeRefresh({RefreshConfig? config}) async {
+  Future<void> requestLifetimeRefresh({RefreshConfig? config}) async {
     final conf = config ?? RefreshConfig();
 
     if (!_checkNeedLoad(conf)) {
@@ -63,21 +63,21 @@ abstract class RefreshController<V, E> extends StateNotifier<RefreshState<V, E>>
     }
   }
 
-  Future<V> requestSilentRefresh() => requestCleanRefresh(silent: true);
+  Future<void> requestSilentRefresh() => requestCleanRefresh(silent: true);
 
-  Future<V> requestCleanRefresh({silent = false}) async {
+  Future<void> requestCleanRefresh({silent = false}) async {
     final config = RefreshConfig(silent: silent);
 
     return await (_mayRefresh(config));
   }
 
-  Future<V> requestMoreRefresh() async {
+  Future<void> requestMoreRefresh() async {
     final config = RefreshConfig(silent: true, stack: true);
 
     return await (_mayRefresh(config));
   }
 
-  Future _mayRefresh(RefreshConfig config) async {
+  Future<void> _mayRefresh(RefreshConfig config) async {
     await for (final newState in _doRefresh(config, state)) {
       if (!mounted) {
         break;
