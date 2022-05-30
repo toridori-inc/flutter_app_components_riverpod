@@ -15,7 +15,7 @@ class ViewModel<T> extends StateNotifier<T> {
   ViewModel({
     required T initialState,
     this.stateWatcher,
-    required ProviderReference ref,
+    required Ref ref,
   }) : super(initialState) {
     _tryUpdateState();
   }

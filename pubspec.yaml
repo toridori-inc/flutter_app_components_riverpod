@@ -14,19 +14,19 @@ dependencies:
 
   # StateNotifierを使って状態管理したい
   # https://pub.dev/packages/state_notifier
-  state_notifier: ^0.7.0
+  state_notifier: ^0.7.2+1
 
   # StateNotifierをWidgetTree上で保持したい
   # https://pub.dev/packages/flutter_state_notifier
-  flutter_state_notifier: ^0.7.0
+  flutter_state_notifier: ^0.7.1
 
   # InheritedWidgetを利用した状態管理を楽に行いたい
   # https://pub.dev/packages/provider
-  provider: ^5.0.0
+  provider: ^6.0.3
 
   # RxOperatorを使いたい
   # https://pub.dev/packages/rxdart
-  rxdart: ^0.26.0
+  rxdart: ^0.27.4
 
   # 複雑なRoutingを楽に書きたい
   # https://pub.dev/packages/fluro
@@ -34,29 +34,29 @@ dependencies:
 
   # URLを外部ブラウザで開きたい
   # https://pub.dev/packages/url_launcher
-  url_launcher: ^6.0.3
+  url_launcher: ^6.1.2
 
   # Http通信したい
   # https://pub.dev/packages/http
-  http: ^0.13.1
+  http: ^0.13.4
 
   # Textの文字サイズを自動で調整したい
   auto_size_text: ^3.0.0-nullsafety.0
 
   # providerの代替
   # http://pub.dev/packages/riverpod
-  flutter_riverpod: ^0.14.0+2
+  flutter_riverpod: ^1.0.1
 
   # https://pub.dev/packages/in_app_review
-  in_app_review: ^2.0.2
+  in_app_review: ^2.0.4
 
   # アプリバージョンとかを取得したい
   # https://pub.dev/packages/package_info#-installing-tab-
-  package_info: ^2.0.0
+  package_info: ^2.0.2
 
   # 一時ディレクトリを取得するのに使用
   # https://pub.dev/packages/path_provider
-  path_provider: ^2.0.1
+  path_provider: ^2.0.10
 
   # バージョン値を比較したい
   # https://pub.dev/packages/version
@@ -64,15 +64,15 @@ dependencies:
 
   # アプリのローカルストレージに値を保存したい
   # https://pub.dev/packages/shared_preferences
-  shared_preferences: ^2.0.5
+  shared_preferences: ^2.0.15
 
   # 画像からexifを削除したい
   # https://pub.dev/packages/image
-  image: ^3.0.2
+  image: ^3.2.0
 
   # 指定したWidgetにフォーカスするOverlay形式のUI表現を楽に作りたい
   # https://pub.dev/packages/tutorial_coach_mark
-  tutorial_coach_mark: ^1.0.0
+  tutorial_coach_mark: ^1.2.3
 
 dev_dependencies:
   flutter_test:
