@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:state_notifier/state_notifier.dart';
 
 typedef ViewModelStateWatcher<T> = T Function(T currentState);
 
