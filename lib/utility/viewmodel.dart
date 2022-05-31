@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:state_notifier/state_notifier.dart';
 
 typedef ViewModelStateWatcher<T> = T Function(T currentState);
 
@@ -16,7 +15,7 @@ class ViewModel<T> extends StateNotifier<T> {
   ViewModel({
     required T initialState,
     this.stateWatcher,
-    required ProviderReference ref,
+    required Ref ref,
   }) : super(initialState) {
     _tryUpdateState();
   }

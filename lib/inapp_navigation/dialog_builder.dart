@@ -201,7 +201,7 @@ class DialogBuilderState extends State<DialogBuilder> {
         future: future,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            WidgetsBinding.instance!.addPostFrameCallback((_) => Navigator.of(context).pop());
+            WidgetsBinding.instance.addPostFrameCallback((_) => Navigator.of(context).pop());
           }
 
           final color = widget.loadingMessageBackgroundColor ?? (DialogTheme.of(context).backgroundColor ?? Theme.of(context).dialogBackgroundColor).withOpacity(0.8);

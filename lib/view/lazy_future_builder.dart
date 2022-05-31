@@ -5,7 +5,8 @@ import 'package:provider/provider.dart';
 
 class LazyFutureBuilder extends StatelessWidget {
   final FutureOr Function()? futureBuilder;
-  final Widget Function(BuildContext context, Future Function() futureBuilder, bool isFutureBuilding) builder;
+  final Widget Function(BuildContext context, Future Function() futureBuilder,
+      bool isFutureBuilding) builder;
 
   const LazyFutureBuilder({
     required this.futureBuilder,

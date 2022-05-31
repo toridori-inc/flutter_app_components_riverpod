@@ -84,7 +84,7 @@ class SilentScreenArguments implements IScreenArguments {
   }
 
   @override
-  // TODO: implement isSingleTask
+  // TODO(niwatly): implement isSingleTask
   bool get isSingleTask => throw UnimplementedError();
 
   @override
@@ -100,11 +100,14 @@ class SilentScreenArguments implements IScreenArguments {
 class RouteNotFoundException implements Exception {
   final String message;
 
-  RouteNotFoundException.invalidUri(String uri) : message = "Invalid uri found. uri = $uri.";
+  RouteNotFoundException.invalidUri(String uri)
+      : message = "Invalid uri found. uri = $uri.";
 
-  RouteNotFoundException.cannotExtractPath(Uri uri) : message = "Cannot extract path. uri = $uri";
+  RouteNotFoundException.cannotExtractPath(Uri uri)
+      : message = "Cannot extract path. uri = $uri";
 
-  RouteNotFoundException.noMatch(String? path) : message = "No routes matched. path = $path";
+  RouteNotFoundException.noMatch(String? path)
+      : message = "No routes matched. path = $path";
 
   @override
   String toString() => message;

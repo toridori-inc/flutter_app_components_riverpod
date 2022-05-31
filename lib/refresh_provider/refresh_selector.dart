@@ -7,7 +7,7 @@ import 'refresh_state.dart';
 /// [RefreshState] を3つ状態に分けて、状態ごとにUIを出し分ける
 ///
 /// また、[RefreshSelector.onValue]で与えられたWidgetは[RefreshState.isSuccess]のときにしかBuildしない。これにより、無駄なnullチェックを省略できる
-class RefreshSelector<V, E> extends StatelessWidget {
+class RefreshSelector<V, E> extends ConsumerWidget {
   /// デフォルトのローディング表示用Widget
   /// 同じ設定を何度もコンストラクタで渡すのが面倒なので、static変数で1つだけ用意する
   static Widget Function(BuildContext context) defaultOnLoading = (context) => const CircularProgressIndicator();
@@ -47,30 +47,30 @@ class RefreshSelector<V, E> extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Consumer(
-      builder: (BuildContext context, T Function<T>(ProviderBase<Object, T>) watch, Widget? child) {
+      builder: (BuildContext context, ref, Widget? child) {
         Widget ret = Stack(
           fit: fit,
           children: [
             Consumer(
-              builder: (context, watch, child) {
-                final state = watch(refreshControllerProvider);
+              builder: (context, ref, child) {
+                final state = ref.watch(refreshControllerProvider);
                 final errorValue = state.value == null ? state.error : null;
                 return errorValue != null && onError != null ? onError!(context, errorValue) : const SizedBox(width: 0, height: 0);
               },
             ),
             Consumer(
-              builder: (context, watch, child) {
-                final state = watch(refreshControllerProvider);
+              builder: (context, ref, child) {
+                final state = ref.watch(refreshControllerProvider);
                 final value = state.value;
                 return value != null ? onValue(context, value) : const SizedBox(width: 0, height: 0);
               },
             ),
             if (!disableLoading)
               Consumer(
-                builder: (BuildContext context, T Function<T>(ProviderBase<Object, T>) watch, Widget? child) {
-                  final state = watch(refreshControllerProvider);
+                builder: (BuildContext context, ref, Widget? child) {
+                  final state = ref.watch(refreshControllerProvider);
                   final isRefreshing = state.isRefreshing;
                   final child = onLoading != null ? onLoading!(context) : defaultOnLoading(context);
                   return AnimatedOpacity(
@@ -87,7 +87,7 @@ class RefreshSelector<V, E> extends StatelessWidget {
         );
 
         if (enablePullRefresh) {
-          ret = _Refresh<V?, E?>(ret, watch<RefreshController>(refreshControllerProvider.notifier) as RefreshController<V?, E?>);
+          ret = _Refresh<V?, E?>(ret, ref.watch<RefreshController>(refreshControllerProvider.notifier) as RefreshController<V?, E?>);
         }
         return ret;
       },

@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
@@ -92,7 +91,7 @@ class _BaseChildRenderObject extends RenderProxyBox {
 
     final size = this.size;
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) => _notifier.value = size);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _notifier.value = size);
   }
 }
 

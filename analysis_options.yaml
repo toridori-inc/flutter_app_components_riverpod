@@ -1,0 +1,6 @@
+analyzer:
+  errors:
+      todo: ignore
+  exclude:
+      # flutter sdkをシンボリックリンクで通している都合
+    - "flutter_sdk/**"
