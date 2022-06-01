@@ -3,7 +3,7 @@ import 'dart:core';
 
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart' hide Locator;
 import 'package:rxdart/rxdart.dart';
