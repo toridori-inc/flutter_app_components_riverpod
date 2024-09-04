@@ -60,8 +60,8 @@ class RadioBoxText<T> extends StatelessWidget {
                     label,
                     maxLines: 2,
                     textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.bodyText2!.apply(
-                          color: disable ? Theme.of(context).disabledColor : Theme.of(context).textTheme.bodyText2!.color,
+                    style: Theme.of(context).textTheme.bodyMedium!.apply(
+                          color: disable ? Theme.of(context).disabledColor : Theme.of(context).textTheme.bodyMedium!.color,
                         ),
                   ),
                   const SizedBox(height: 2),

@@ -23,7 +23,7 @@ class ForwardNavigationText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _style = style ?? Theme.of(context).textTheme.bodyText2;
+    final _style = style ?? Theme.of(context).textTheme.bodyMedium;
 
     return Align(
       alignment: Alignment.centerRight,

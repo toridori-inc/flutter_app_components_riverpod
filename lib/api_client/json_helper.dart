@@ -72,7 +72,7 @@ class IJsonError implements IApiClientError {
   ApiClientErrorKind get kind => ApiClientErrorKind.Json;
 }
 
-class JsonNullSourceFoundError with IJsonError {
+class JsonNullSourceFoundError extends IJsonError {
   final String key;
 
   JsonNullSourceFoundError(this.key);
@@ -81,7 +81,7 @@ class JsonNullSourceFoundError with IJsonError {
   String toString() => "$runtimeType: '$key' was referenced for null source.";
 }
 
-class JsonValueNotFoundError with IJsonError {
+class JsonValueNotFoundError extends IJsonError {
   final Map<String, dynamic> source;
   final String key;
 

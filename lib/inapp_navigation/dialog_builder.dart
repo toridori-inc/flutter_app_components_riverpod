@@ -259,4 +259,4 @@ class DialogBuilderState extends State<DialogBuilder> {
   }
 }
 
-class _CheckBoxNotifier = ValueNotifier<bool?> with Type;
+typedef _CheckBoxNotifier = ValueNotifier<bool?>;
