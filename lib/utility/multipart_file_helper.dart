@@ -118,10 +118,9 @@ class MultipartFileHelper {
 
       // 回転方向を補正してからExifを削除する
       //
-      // Note: bakeOrienation内で行われているexifデータの削除は効果がないので別途削除する
+      // Note: bakeOrientation内で行われているexifデータの削除は効果がないので別途削除する
       // Note: bakeOrientation内ではexif.dataを削除しているが、encodeメソッドはexif.rawDataを参照している
-      final baked = image.bakeOrientation(resized) //
-        ..exif.rawData = [];
+      final baked = image.bakeOrientation(resized);
 
       return baked;
     };

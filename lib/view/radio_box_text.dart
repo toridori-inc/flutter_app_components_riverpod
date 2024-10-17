@@ -70,7 +70,7 @@ class RadioBoxText<T> extends StatelessWidget {
                       description!,
                       maxLines: 5,
                       textAlign: TextAlign.left,
-                      style: descriptionTextStyle ?? Theme.of(context).textTheme.caption,
+                      style: descriptionTextStyle ?? Theme.of(context).textTheme.bodySmall,
                     ),
                 ],
               ),

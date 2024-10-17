@@ -53,7 +53,7 @@ dependencies:
 
   # アプリバージョンとかを取得したい
   # https://pub.dev/packages/package_info#-installing-tab-
-  package_info: ^2.0.2
+  package_info_plus: ^8.0.3
 
   # 一時ディレクトリを取得するのに使用
   # https://pub.dev/packages/path_provider
