@@ -1,4 +1,4 @@
-# flutter_app_components
+# flutter_app_components_riverpod
 
 A new Flutter package.
 
